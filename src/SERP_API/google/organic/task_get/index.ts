@@ -1,5 +1,5 @@
 import { DFSEO } from "../../../..";
-import { ISERP_Google_Organic_Task_Get_Regular_Response, ISERP_Google_Organic_Task_Get_Advanced_Response, ISERP_Google_Organic_Task_Get_HTML_Response } from "../../../../typings";
+import { ISERP_Google_Organic_Task_Get_Regular_Response, ISERP_Google_Organic_Task_Get_Advanced_Response, ISERP_Google_Organic_Task_Get_HTML_Response } from "../../../../../typings";
 
 export class TaskGet {
     constructor(private DFSEO: DFSEO) {

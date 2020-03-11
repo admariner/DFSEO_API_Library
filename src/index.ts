@@ -2,8 +2,8 @@
 import { AxiosRequestConfig, AxiosResponse } from 'axios';
 import axios from 'axios';
 import { SerpAPI } from './SERP_API';
-import { Logger } from './helpers';
-import { IDFSEO_API_Response } from './typings';
+import { Logger } from './helpers/logger';
+import { IDFSEO_API_Response } from '../typings';
 export class DFSEO {
     /**
      * Logger  of dfseo
@@ -26,35 +26,33 @@ export class DFSEO {
      * @param password 
      */
     constructor(private username: string, private password: string, private useSandbox?: boolean) {
-        this.generateAuthorizationString();
+        this.authorization = this.generateAuthorizationString();
     }
     /**
      * Generates authorization string
      */
     private generateAuthorizationString(): string {
-        if (this.username && this.password) {
 
-            const stringToEncode: string = `${this.username}:${this.password}`;
-            let base64: string;
-            if (typeof window !== 'undefined') {
-                // running in browser
-                base64 = btoa(stringToEncode);
-            } else {
-                // running in node.js
-                base64 = Buffer.from(stringToEncode).toString('base64');
-            }
-            this.authorization = `Basic ${base64}`;
-            return this.authorization;
+        const stringToEncode: string = `${this.username}:${this.password}`;
+        let base64: string;
+        if (typeof window !== 'undefined') {
+            // running in browser
+            base64 = btoa(stringToEncode);
+        } else {
+            // running in node.js
+            base64 = Buffer.from(stringToEncode).toString('base64');
         }
+        return `Basic ${base64}`;
+
     }
 
-    public async fetch(config: AxiosRequestConfig): Promise<IDFSEO_API_Response> {
+    public async fetch<T>(config: AxiosRequestConfig): Promise<T> {
         const authorization = this.authorization;
         const useSandbox = this.useSandbox;
         const baseURL = this.useSandbox ? 'https://sandbox.dataforseo.com/v3/' : 'https://api.dataforseo.com/v3/'
         const headers = authorization ? { authorization } : null;
 
-        const response: AxiosResponse<IDFSEO_API_Response> = await axios.request({
+        const response: AxiosResponse<T> = await axios.request({
             ...config,
             baseURL,
             headers
@@ -65,10 +63,10 @@ export class DFSEO {
             throw response.statusText;
         };
 
-        if (response.data.status_code !== 20000 && response.data.status_code !== 20100) {
-            this.logger.error(response.data.status_code, response.data.status_message);
-            throw response.data.status_message
-        }
+        // if (response.data.status_code !== 20000 && response.data.status_code !== 20100) {
+        //     this.logger.error(response.data.status_code, response.data.status_message);
+        //     throw response.data.status_message
+        // }
 
         return response.data;
     }

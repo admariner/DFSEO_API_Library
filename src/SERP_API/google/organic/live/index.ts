@@ -1,5 +1,5 @@
 import { DFSEO } from "../../../..";
-import { ISERP_Google_Organic_Live_Advanced_Post_Response, ISERP_Google_Organic_Live_Request } from '../../../../typings';
+import { ISERP_Google_Organic_Live_Advanced_Post_Response, ISERP_Google_Organic_Live_Request } from '../../../../../typings';
 export class TaskLive {
     constructor(private DFSEO: DFSEO) {
 
@@ -10,7 +10,7 @@ export class TaskLive {
      * @param data 
      * @returns regular 
      */
-    regular(data: ISERP_Google_Organic_Live_Request): Promise<ISERP_Google_Organic_Live_Advanced_Post_Response> {
+    regular(data: ISERP_Google_Organic_Live_Request[]): Promise<ISERP_Google_Organic_Live_Advanced_Post_Response> {
         return this.DFSEO.fetch({ method: 'POST', url: 'serp/google/organic/live/regular', data });
     }
 
@@ -19,7 +19,7 @@ export class TaskLive {
      * @param data 
      * @returns advanced 
      */
-    advanced(data: ISERP_Google_Organic_Live_Request): Promise<ISERP_Google_Organic_Live_Advanced_Post_Response> {
+    advanced(data: ISERP_Google_Organic_Live_Request[]): Promise<ISERP_Google_Organic_Live_Advanced_Post_Response> {
         return this.DFSEO.fetch({ method: 'POST', url: 'serp/google/organic/live/advanced', data });
     }
 
@@ -28,7 +28,7 @@ export class TaskLive {
      * @param data 
      * @returns html 
      */
-    html(data: ISERP_Google_Organic_Live_Request): Promise<ISERP_Google_Organic_Live_Advanced_Post_Response> {
+    html(data: ISERP_Google_Organic_Live_Request[]): Promise<ISERP_Google_Organic_Live_Advanced_Post_Response> {
         return this.DFSEO.fetch({ method: 'POST', url: 'serp/google/organic/live/html', data });
     }
 }

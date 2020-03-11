@@ -1,9 +1,11 @@
 import { DFSEO } from "../../..";
-import { ISERP_Google_Organic_Task_Post_Data, ISERP_Google_Organic_Task_Post_Response, ISERP_Google_Organic_Tasks_Ready_Response } from "../../../typings";
+import { ISERP_Google_Organic_Task_Post_Data, ISERP_Google_Organic_Task_Post_Response, ISERP_Google_Organic_Tasks_Ready_Response } from "../../../../typings";
 import { TaskGet } from "./task_get";
+import { TaskLive } from "./live";
 
 export class Organic {
     public taskGet: TaskGet = new TaskGet(this.DFSEO);
+    public live: TaskLive = new TaskLive(this.DFSEO);
     constructor(private DFSEO: DFSEO) {
 
     }
@@ -16,8 +18,8 @@ export class Organic {
         })
     }
 
-    taskReady(id: string): Promise<ISERP_Google_Organic_Tasks_Ready_Response> {
-        return this.DFSEO.fetch({
+    taskReady(): Promise<ISERP_Google_Organic_Tasks_Ready_Response> {
+        return this.DFSEO.fetch<ISERP_Google_Organic_Tasks_Ready_Response>({
             method: "GET",
             url: "serp/google/organic/tasks_ready"
         })

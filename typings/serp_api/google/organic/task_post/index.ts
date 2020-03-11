@@ -34,5 +34,5 @@ export interface ISERP_Google_Organic_Task_Post_Response extends IDFSEO_API_Resp
 
 export interface ISERP_Google_Organic_Task_Post_Task extends IDFSEO_API_Task {
      data: ISERP_Google_Organic_Task_Post_Data[];
-     result?: any[];
+     result: null;
 }

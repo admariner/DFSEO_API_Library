@@ -42,10 +42,6 @@ reference: https://en.wikipedia.org/wiki/Universally_unique_identifier
      */
     path: string[];
     data: any;
-    /**
-     * array of results
-     */
-    result: null | any[];
 }
 
 
