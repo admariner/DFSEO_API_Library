@@ -1,5 +1,5 @@
 # Data For SEO API (for javascript)
-
+![code coverage](/coverage/badge.svg)
 ### Purpose
 
 The purpose of this library is to expose the wonderful Data For SEO rest API to javascript applications easily. Without having to write your own API calls and whatnot. It should work out of the box with only needing to provide your account's credentials for authorization purposes. 
