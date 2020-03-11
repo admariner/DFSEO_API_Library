@@ -1,0 +1,1 @@
+export const merchant = null;
