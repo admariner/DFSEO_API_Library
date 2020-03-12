@@ -4,6 +4,7 @@ import axios from 'axios';
 import { SerpAPI } from './SERP_API';
 import { Logger } from './helpers/logger';
 import { IDFSEO_API_Response } from '../typings';
+import { KeywordsDataAPI } from './keywords_data_API';
 export class DFSEO {
     /**
      * Logger  of dfseo
@@ -17,6 +18,7 @@ export class DFSEO {
      * public api methods;
      */
     public serpAPI: SerpAPI = new SerpAPI(this);
+    public keywordsDataAPI: KeywordsDataAPI = new KeywordsDataAPI(this);
 
 
 
