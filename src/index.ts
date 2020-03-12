@@ -63,10 +63,10 @@ export class DFSEO {
             throw response.statusText;
         };
 
-        // if (response.data.status_code !== 20000 && response.data.status_code !== 20100) {
-        //     this.logger.error(response.data.status_code, response.data.status_message);
-        //     throw response.data.status_message
-        // }
+        if (response.data.status_code !== 20000 && response.data.status_code !== 20100) {
+            this.logger.error(response.data.status_code, response.data.status_message);
+            throw response.data.status_message
+        }
 
         return response.data;
     }

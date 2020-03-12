@@ -1,5 +1,5 @@
 import { DFSEO } from "../../..";
-import { ISERP_Google_Organic_Task_Post_Data } from "../../../../typings";
+import { ISERP_Google_Images_Task_Post_Request, ISERP_Google_Images_Task_Post_Response, ISERP_Google_Images_Tasks_Ready_Response } from "../../../../typings";
 import { TaskGet } from "./task_get";
 import { Live } from "./live";
 
@@ -10,11 +10,11 @@ export class Images {
 
     }
 
-    taskPost(data: ISERP_Google_Organic_Task_Post_Data[]): Promise<any> {
+    taskPost(data: ISERP_Google_Images_Task_Post_Request[]): Promise<ISERP_Google_Images_Task_Post_Response> {
         return this.DFSEO.fetch({ method: "POST", url: 'serp/google/images/task_post', data });
     }
 
-    taskReady(): Promise<any> {
+    taskReady(): Promise<ISERP_Google_Images_Tasks_Ready_Response> {
         return this.DFSEO.fetch({ method: "GET", url: 'serp/google/images/tasks_ready' })
     }
 }

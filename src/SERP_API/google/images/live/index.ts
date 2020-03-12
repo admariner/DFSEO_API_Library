@@ -1,4 +1,4 @@
-import { ISERP_Google_Organic_Task_Post_Data } from "../../../../../typings";
+import { ISERP_Google_Organic_Task_Post_Data, ISERP_Google_Images_Live_Advanced_Response, ISERP_Google_Images_Live_Advanced_Request, ISERP_Google_Images_Live_HTML_Request, ISERP_Google_Images_Live_HTML_Response } from "../../../../../typings";
 import { DFSEO } from "../../../..";
 
 export class Live {
@@ -6,7 +6,7 @@ export class Live {
 
     }
 
-    advanced(data: ISERP_Google_Organic_Task_Post_Data[]): Promise<any> {
+    advanced(data: ISERP_Google_Images_Live_Advanced_Request[]): Promise<ISERP_Google_Images_Live_Advanced_Response> {
         return this.DFSEO.fetch({
             method: "POST",
             url: "serp/google/images/live/advanced",
@@ -14,7 +14,7 @@ export class Live {
         });
     }
 
-    html(data: ISERP_Google_Organic_Task_Post_Data[]): Promise<any> {
+    html(data: ISERP_Google_Images_Live_HTML_Request[]): Promise<ISERP_Google_Images_Live_HTML_Response> {
         return this.DFSEO.fetch({
             method: "POST",
             url: "serp/google/images/live/html",

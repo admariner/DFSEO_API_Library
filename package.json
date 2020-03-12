@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "nyc --reporter=json-summary ts-mocha ",
+    "test": "nyc --reporter=json-summary ts-mocha && npm run make-badge",
     "make-badge": "make-coverage-badge"
   },
   "author": "",
