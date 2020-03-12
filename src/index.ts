@@ -5,6 +5,8 @@ import { SerpAPI } from './SERP_API';
 import { Logger } from './helpers/logger';
 import { IDFSEO_API_Response } from '../typings';
 import { KeywordsDataAPI } from './keywords_data_API';
+import { TrafficAnalyticsAPI } from './traffic_analytics_API';
+import { Appendix } from './appendix';
 export class DFSEO {
     /**
      * Logger  of dfseo
@@ -19,6 +21,8 @@ export class DFSEO {
      */
     public serpAPI: SerpAPI = new SerpAPI(this);
     public keywordsDataAPI: KeywordsDataAPI = new KeywordsDataAPI(this);
+    public trafficAnalyticsAPI: TrafficAnalyticsAPI = new TrafficAnalyticsAPI(this);
+    public appendix: Appendix = new Appendix(this);
 
 
 
@@ -48,17 +52,17 @@ export class DFSEO {
 
     }
 
-    public async fetch<T>(config: AxiosRequestConfig): Promise<T> {
+    public async fetch(config: AxiosRequestConfig): Promise<any> {
         const authorization = this.authorization;
         const useSandbox = this.useSandbox;
         const baseURL = this.useSandbox ? 'https://sandbox.dataforseo.com/v3/' : 'https://api.dataforseo.com/v3/'
         const headers = authorization ? { authorization } : null;
 
-        const response: AxiosResponse<T> = await axios.request({
+        const response: AxiosResponse<any> = await axios.request({
             ...config,
             baseURL,
             headers
-        })
+        });
         // error handling
         if (response.status !== 200) {
             this.logger.error(response.status, response.statusText);
