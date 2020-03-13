@@ -19,7 +19,7 @@ export class Organic {
     }
 
     taskReady(): Promise<ISERP_Google_Organic_Tasks_Ready_Response> {
-        return this.DFSEO.fetch<ISERP_Google_Organic_Tasks_Ready_Response>({
+        return this.DFSEO.fetch({
             method: "GET",
             url: "serp/google/organic/tasks_ready"
         })

@@ -1,12 +1,11 @@
 
-import { AxiosRequestConfig, AxiosResponse } from 'axios';
-import axios from 'axios';
 import { SerpAPI } from './SERP_API';
 import { Logger } from './helpers/logger';
-import { IDFSEO_API_Response } from '../typings';
 import { KeywordsDataAPI } from './keywords_data_API';
 import { TrafficAnalyticsAPI } from './traffic_analytics_API';
 import { Appendix } from './appendix';
+import fetch from 'node-fetch';
+
 export class DFSEO {
     /**
      * Logger  of dfseo
@@ -40,40 +39,46 @@ export class DFSEO {
     private generateAuthorizationString(): string {
 
         const stringToEncode: string = `${this.username}:${this.password}`;
-        let base64: string;
-        if (typeof window !== 'undefined') {
-            // running in browser
-            base64 = btoa(stringToEncode);
-        } else {
-            // running in node.js
-            base64 = Buffer.from(stringToEncode).toString('base64');
-        }
+        let base64 = Buffer.from(stringToEncode).toString('base64');
+
         return `Basic ${base64}`;
 
     }
 
-    public async fetch(config: AxiosRequestConfig): Promise<any> {
+    public async fetch(config: {
+        url: string,
+        method: "GET" | "POST",
+        data?: any
+    }): Promise<any> {
         const authorization = this.authorization;
         const useSandbox = this.useSandbox;
         const baseURL = this.useSandbox ? 'https://sandbox.dataforseo.com/v3/' : 'https://api.dataforseo.com/v3/'
-        const headers = authorization ? { authorization } : null;
+        const headers = { authorization, 'Content-Type': 'application/json' };
+        try {
+            const response = await fetch(baseURL + config.url, {
+                method: config.method,
+                body: JSON.stringify(config.data),
+                headers
+            })
 
-        const response: AxiosResponse<any> = await axios.request({
-            ...config,
-            baseURL,
-            headers
-        });
-        // error handling
-        if (response.status !== 200) {
-            this.logger.error(response.status, response.statusText);
-            throw response.statusText;
-        };
+            if (response.status !== 200) {
+                this.logger.error(response.status, response.statusText);
+                throw response.statusText;
+            };
 
-        if (response.data.status_code !== 20000 && response.data.status_code !== 20100) {
-            this.logger.error(response.data.status_code, response.data.status_message);
-            throw response.data.status_message
+            const data = await response.json();
+
+            if (data.status_code !== 20000 && data.status_code !== 20100) {
+                this.logger.error(data.status_code, data.status_message);
+                throw data.status_message
+            }
+
+            return data;
+        } catch (e) {
+            console.log(e);
+            throw e;
         }
+        // error handling
 
-        return response.data;
     }
 }
