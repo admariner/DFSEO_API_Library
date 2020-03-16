@@ -5,7 +5,7 @@ export class TaskGet {
 
   advanced(id: string) {
     return this.DFSEO.fetch({
-      method: "POST",
+      method: "GET",
       url: `serp/google/maps/task_get/advanced/${id}`
     });
   }
