@@ -1,4 +1,4 @@
-import { DFSEO } from "../../../..";
+import DFSEO from "../../../..";
 
 export class TaskGet {
   constructor(private DFSEO: DFSEO) {}

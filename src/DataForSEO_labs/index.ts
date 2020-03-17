@@ -1,4 +1,4 @@
-import { DFSEO } from "..";
+import DFSEO from "..";
 import { KeywordResearch } from "./keyword_research";
 import { MarketSpecificAnalysis } from "./market_specific_analysis";
 import { CompetitorResearch } from "./competitor_research";

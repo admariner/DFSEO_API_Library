@@ -6,7 +6,7 @@ import { Appendix } from "./appendix";
 import fetch from "node-fetch";
 import { DataForSEOLabs } from "./DataForSEO_labs";
 
-export class DFSEO {
+export default class DFSEO {
   /**
    * Logger  of dfseo
    */
@@ -52,7 +52,6 @@ export class DFSEO {
     data?: any;
   }): Promise<any> {
     const authorization = this.authorization;
-    const useSandbox = this.useSandbox;
     const baseURL = this.useSandbox
       ? "https://sandbox.dataforseo.com/v3/"
       : "https://api.dataforseo.com/v3/";

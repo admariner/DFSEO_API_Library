@@ -1,4 +1,4 @@
-import { DFSEO } from "../..";
+import DFSEO from "../..";
 
 export class SimilarWeb {
   constructor(private DFSEO: DFSEO) {}

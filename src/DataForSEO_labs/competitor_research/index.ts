@@ -1,4 +1,4 @@
-import { DFSEO } from "../..";
+import DFSEO from "../..";
 
 export class CompetitorResearch {
   constructor(private DFSEO: DFSEO) {}

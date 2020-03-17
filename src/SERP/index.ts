@@ -1,4 +1,4 @@
-import { DFSEO } from "..";
+import DFSEO from "..";
 import { Google } from "./google";
 import { Bing } from "./bing";
 import { Yahoo } from "./yahoo";

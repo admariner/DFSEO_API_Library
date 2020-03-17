@@ -1,8 +1,10 @@
 const path = require("path");
+const nodeExternals = require("webpack-node-externals");
 
 module.exports = {
   mode: "production",
   entry: "./src/index.ts",
+  target: "node",
   module: {
     rules: [
       {
@@ -12,17 +14,16 @@ module.exports = {
       }
     ]
   },
-  node: false,
   resolve: {
     extensions: [".tsx", ".ts", ".js"]
   },
   devtool: "sourc-map",
-  externals: { "node-fetch": "node-fetch" },
+  externals: [nodeExternals()],
   output: {
     library: "DFSEO",
+    libraryExport: "default",
     libraryTarget: "umd",
     filename: "index.js",
-    umdNamedDefine: true,
     path: path.resolve(__dirname, "dist")
   }
 };

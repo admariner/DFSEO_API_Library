@@ -1,4 +1,4 @@
-import { DFSEO } from "..";
+import DFSEO from "..";
 import { GoogleAds } from "./google_ads";
 import { GoogleTrends } from "./google_trends";
 

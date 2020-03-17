@@ -1,4 +1,4 @@
-import { DFSEO } from "..";
+import DFSEO from "..";
 import { SimilarWeb } from "./similar_web";
 
 export class TrafficAnalytics {

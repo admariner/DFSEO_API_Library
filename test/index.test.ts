@@ -1,4 +1,4 @@
-import { DFSEO } from "../src";
+import DFSEO from "../src";
 import * as dotenv from "dotenv";
 import { expect } from "chai";
 import { assert } from "console";

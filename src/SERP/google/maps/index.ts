@@ -1,4 +1,4 @@
-import { DFSEO } from "../../..";
+import DFSEO from "../../..";
 import {
   ISERP_Google_Organic_Task_Post_Data,
   ISERP_Google_Organic_Task_Post_Response,

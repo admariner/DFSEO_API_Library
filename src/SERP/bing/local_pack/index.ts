@@ -1,4 +1,4 @@
-import { DFSEO } from "../../..";
+import DFSEO from "../../..";
 import { TaskGet } from "./task_get";
 import { Live } from "./live";
 
