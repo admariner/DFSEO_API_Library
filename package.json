@@ -5,10 +5,10 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "test": "nyc --reporter=json-summary ts-mocha && npm run make-badge",
+    "test": "nyc --reporter=json-summary --report-dir=docs ts-mocha && npm run make-badge",
     "build": "webpack --config webpack.config.js",
-    "make-test-html": "nyc --reporter=html ts-mocha",
-    "make-badge": "make-coverage-badge"
+    "make-test-html": "nyc --reporter=html --report-dir=docs ts-mocha",
+    "make-badge": "make-coverage-badge --report-path=./docs/coverage-summary.json --output-path=./docs/badge.svg"
   },
   "author": "",
   "license": "ISC",

@@ -1,10 +1,10 @@
-import { Serp } from "./SERP_API";
+import { Serp } from "./SERP";
 import { Logger } from "./helpers/logger";
-import { KeywordsData } from "./keywords_data_API";
-import { TrafficAnalytics } from "./traffic_analytics_API";
+import { KeywordsData } from "./keywords_data";
+import { TrafficAnalytics } from "./traffic_analytics";
 import { Appendix } from "./appendix";
 import fetch from "node-fetch";
-import { DataForSEOLabs } from "./DataForSEO_labs_API";
+import { DataForSEOLabs } from "./DataForSEO_labs";
 
 export class DFSEO {
   /**
