@@ -4,6 +4,7 @@ import { KeywordsDataAPI } from "./keywords_data_API";
 import { TrafficAnalyticsAPI } from "./traffic_analytics_API";
 import { Appendix } from "./appendix";
 import fetch from "node-fetch";
+import { DataForSEOLabsAPI } from "./DataForSEO_labs_API";
 
 export class DFSEO {
   /**
@@ -19,6 +20,7 @@ export class DFSEO {
    */
   public serpAPI: SerpAPI = new SerpAPI(this);
   public keywordsDataAPI: KeywordsDataAPI = new KeywordsDataAPI(this);
+  public dataForSEOLabsAPI: DataForSEOLabsAPI = new DataForSEOLabsAPI(this);
   public trafficAnalyticsAPI: TrafficAnalyticsAPI = new TrafficAnalyticsAPI(
     this
   );
