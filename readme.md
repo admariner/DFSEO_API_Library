@@ -19,9 +19,9 @@ var dfseoAPI = require("DFSEO");
 var username = process.env.DATAFORSEO_USERNAME;
 var password = process.env.DATAFORSEO_PASSWORD;
 
-var dfseoAPI = new DFSEO(username, password);
+var dfseo = new DFSEO(username, password);
 
-dfseoAPI.serp.google.organic
+dfseo.serp.google.organic
   .taskPost([
     {
       keyword: "test",
@@ -50,11 +50,11 @@ dotenv.config();
 const username = process.env.DATAFORSEO_USERNAME;
 const password = process.env.DATAFORSEO_PASSWORD;
 
-const dfseoAPI = new DFSEO(username, password);
+const dfseo = new DFSEO(username, password);
 
 async function main(){
     try{
-        const response = await dfseoAPI.serp.google.organic.taskPost([
+        const response = await dfseo.serp.google.organic.taskPost([
             keyword: 'test',
             priority: 1,
             location_code: 2840,
