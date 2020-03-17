@@ -59,11 +59,376 @@ describe("DFSEO", () => {
     });
   });
 
+  // appendix
+  it("should create appendix API", () => {
+    assert(dfseo.appendix);
+    describe("DFSEO Appendix API", () => {
+      it("should be able to get user data", async () => {
+        dfseoAPICheck(await dfseo.appendix.userData());
+      });
+      it("should be able to get errors", async () => {
+        dfseoAPICheck(await dfseo.appendix.errors());
+      });
+    });
+  });
+  // traffic analytics
+  it("should create traffic analytis API", () => {
+    assert(dfseo.trafficAnalyticsAPI);
+    describe("DFSEO Traffic Analytics API", () => {
+      it("should create similar web", () => {
+        assert(dfseo.trafficAnalyticsAPI.similarWeb);
+        describe("DFSEO Traffic Analytics Similar Web", () => {
+          it("should be able to set task", async () => {
+            dfseoAPICheck(
+              await dfseo.trafficAnalyticsAPI.similarWeb.taskPost(newTask)
+            );
+          });
+          it("should be able to get ready tasks", async () => {
+            dfseoAPICheck(
+              await dfseo.trafficAnalyticsAPI.similarWeb.tasksReady()
+            );
+          });
+          it("should be able to get task", async () => {
+            dfseoAPICheck(
+              await dfseo.trafficAnalyticsAPI.similarWeb.taskGet(taskId)
+            );
+          });
+          it("should be able to get live data", async () => {
+            dfseoAPICheck(
+              await dfseo.trafficAnalyticsAPI.similarWeb.live(newTask)
+            );
+          });
+        });
+      });
+    });
+  });
+  //DFSEO Keywords
+  it("should creat keywords API", () => {
+    assert(dfseo.keywordsDataAPI);
+    describe("DFSEO Keywords Data API", () => {
+      it("should create google trends", () => {
+        assert(dfseo.keywordsDataAPI.googleTrends);
+        describe("DFSEO Keywords Google Trends", () => {
+          it("should be able to create Explore", () => {
+            assert(dfseo.keywordsDataAPI.googleTrends.explore);
+            describe("DFSEO Keywords Google Trends Explore", () => {
+              it("should be able to set task", async () => {
+                dfseoAPICheck(
+                  await dfseo.keywordsDataAPI.googleTrends.explore.taskPost(
+                    newTask
+                  )
+                );
+              });
+              it("should be able to get ready tasks", async () => {
+                dfseoAPICheck(
+                  await dfseo.keywordsDataAPI.googleTrends.explore.tasksReady()
+                );
+              });
+              it("should be able to get task", async () => {
+                dfseoAPICheck(
+                  await dfseo.keywordsDataAPI.googleTrends.explore.taskGet(
+                    taskId
+                  )
+                );
+              });
+              it("should be able to get live data", async () => {
+                dfseoAPICheck(
+                  await dfseo.keywordsDataAPI.googleTrends.explore.live(newTask)
+                );
+              });
+            });
+          });
+          it("should be able to get locations", async () => {
+            dfseoAPICheck(await dfseo.keywordsDataAPI.googleTrends.locations());
+          });
+          it("should be able to get locations by country", async () => {
+            dfseoAPICheck(
+              await dfseo.keywordsDataAPI.googleTrends.locations("UK")
+            );
+          });
+          it("should be able to get languages", async () => {
+            dfseoAPICheck(await dfseo.keywordsDataAPI.googleTrends.languages());
+          });
+          it("should be able to get  categories", async () => {
+            dfseoAPICheck(
+              await dfseo.keywordsDataAPI.googleTrends.categories()
+            );
+          });
+        });
+      });
+      it("should create google Ads", () => {
+        assert(dfseo.keywordsDataAPI.googleAds);
+        describe("DFSEO Keywords Google Ads", () => {
+          it("should be able to create ads traffic by platform", () => {
+            assert(dfseo.keywordsDataAPI.googleAds.adsTrafficByPlatform);
+            describe("DFSEO Keywords Google Ads Ads Traffic By Platform", () => {
+              it("should be able to set task", async () => {
+                dfseoAPICheck(
+                  await dfseo.keywordsDataAPI.googleAds.adsTrafficByPlatform.taskPost(
+                    newTask
+                  )
+                );
+              });
+              it("should be able to get ready tasks", async () => {
+                dfseoAPICheck(
+                  await dfseo.keywordsDataAPI.googleAds.adsTrafficByPlatform.tasksReady()
+                );
+              });
+              it("should be able to get task", async () => {
+                dfseoAPICheck(
+                  await dfseo.keywordsDataAPI.googleAds.adsTrafficByPlatform.taskGet(
+                    taskId
+                  )
+                );
+              });
+              it("should be able to get live data", async () => {
+                dfseoAPICheck(
+                  await dfseo.keywordsDataAPI.googleAds.adsTrafficByPlatform.live(
+                    newTask
+                  )
+                );
+              });
+            });
+          });
+          it("should be able to create ads traffic by keywords", () => {
+            assert(dfseo.keywordsDataAPI.googleAds.adsTrafficByKeywords);
+            describe("DFSEO Keywords Google Ads Ads Traffic By Keywords", () => {
+              it("should be able to set task", async () => {
+                dfseoAPICheck(
+                  await dfseo.keywordsDataAPI.googleAds.adsTrafficByKeywords.taskPost(
+                    newTask
+                  )
+                );
+              });
+              it("should be able to get ready tasks", async () => {
+                dfseoAPICheck(
+                  await dfseo.keywordsDataAPI.googleAds.adsTrafficByKeywords.tasksReady()
+                );
+              });
+              it("should be able to get task", async () => {
+                dfseoAPICheck(
+                  await dfseo.keywordsDataAPI.googleAds.adsTrafficByKeywords.taskGet(
+                    taskId
+                  )
+                );
+              });
+              it("should be able to get live data", async () => {
+                dfseoAPICheck(
+                  await dfseo.keywordsDataAPI.googleAds.adsTrafficByKeywords.live(
+                    newTask
+                  )
+                );
+              });
+            });
+          });
+          it("should create keywords for category", () => {
+            assert(dfseo.keywordsDataAPI.googleAds.keywordsForCategory);
+            describe("DFSEO Keywords Google Ads Keywords for Category", () => {
+              it("should be able to set task", async () => {
+                dfseoAPICheck(
+                  await dfseo.keywordsDataAPI.googleAds.keywordsForCategory.taskPost(
+                    newTask
+                  )
+                );
+              });
+              it("should be able to get ready tasks", async () => {
+                dfseoAPICheck(
+                  await dfseo.keywordsDataAPI.googleAds.keywordsForCategory.tasksReady()
+                );
+              });
+              it("should be able to get task", async () => {
+                dfseoAPICheck(
+                  await dfseo.keywordsDataAPI.googleAds.keywordsForCategory.taskGet(
+                    taskId
+                  )
+                );
+              });
+              it("should be able to get live data", async () => {
+                dfseoAPICheck(
+                  await dfseo.keywordsDataAPI.googleAds.keywordsForCategory.live(
+                    newTask
+                  )
+                );
+              });
+            });
+          });
+          it("should create keywords for keywords", () => {
+            assert(dfseo.keywordsDataAPI.googleAds.keywordsForKeywords);
+            describe("DFSEO Keywords Google Ads Keywords for Keywords", () => {
+              it("should be able to set task", async () => {
+                dfseoAPICheck(
+                  await dfseo.keywordsDataAPI.googleAds.keywordsForKeywords.taskPost(
+                    newTask
+                  )
+                );
+              });
+              it("should be able to get ready tasks", async () => {
+                dfseoAPICheck(
+                  await dfseo.keywordsDataAPI.googleAds.keywordsForKeywords.tasksReady()
+                );
+              });
+              it("should be able to get task", async () => {
+                dfseoAPICheck(
+                  await dfseo.keywordsDataAPI.googleAds.keywordsForKeywords.taskGet(
+                    taskId
+                  )
+                );
+              });
+              it("should be able to get live data", async () => {
+                dfseoAPICheck(
+                  await dfseo.keywordsDataAPI.googleAds.keywordsForKeywords.live(
+                    newTask
+                  )
+                );
+              });
+            });
+          });
+          it("should create keywords for site", () => {
+            assert(dfseo.keywordsDataAPI.googleAds.keywordsForSite);
+            describe("DFSEO Keywords Google Ads Keywords For Site", () => {
+              it("should be able to able to set task", async () => {
+                dfseoAPICheck(
+                  await dfseo.keywordsDataAPI.googleAds.keywordsForSite.taskPost(
+                    newTask
+                  )
+                );
+              });
+              it("should be able to get ready tasks", async () => {
+                dfseoAPICheck(
+                  await dfseo.keywordsDataAPI.googleAds.keywordsForSite.tasksReady()
+                );
+              });
+              it("should be able to get task", async () => {
+                dfseoAPICheck(
+                  await dfseo.keywordsDataAPI.googleAds.keywordsForSite.taskGet(
+                    taskId
+                  )
+                );
+              });
+              it("should be able to get live data", async () => {
+                dfseoAPICheck(
+                  await dfseo.keywordsDataAPI.googleAds.keywordsForSite.live(
+                    newTask
+                  )
+                );
+              });
+            });
+          });
+          it("should create search volume", () => {
+            assert(dfseo.keywordsDataAPI.googleAds.searchVolume);
+            describe("DFSEO Keywords Google Ads Search Volume", () => {
+              it("should be able to set task", async () => {
+                dfseoAPICheck(
+                  await dfseo.keywordsDataAPI.googleAds.searchVolume.taskPost(
+                    newTask
+                  )
+                );
+              });
+              it("should be able to get ready tasks", async () => {
+                dfseoAPICheck(
+                  await dfseo.keywordsDataAPI.googleAds.searchVolume.tasksReady()
+                );
+              });
+              it("should be able to get task", async () => {
+                dfseoAPICheck(
+                  await dfseo.keywordsDataAPI.googleAds.searchVolume.taskGet(
+                    taskId
+                  )
+                );
+              });
+              it("should be able to get live data", async () => {
+                dfseoAPICheck(
+                  await dfseo.keywordsDataAPI.googleAds.searchVolume.live(
+                    newTask
+                  )
+                );
+              });
+            });
+          });
+          it("should be able to get locations", async () => {
+            dfseoAPICheck(await dfseo.keywordsDataAPI.googleAds.locations());
+          });
+          it("should be able to get languages", async () => {
+            dfseoAPICheck(await dfseo.keywordsDataAPI.googleAds.languages());
+          });
+          it("should be able to get categories", async () => {
+            dfseoAPICheck(await dfseo.keywordsDataAPI.googleAds.categories());
+          });
+          it("should be able to get adwords status", async () => {
+            dfseoAPICheck(
+              await dfseo.keywordsDataAPI.googleAds.adWordsStatus()
+            );
+          });
+        });
+      });
+      it("should create google trends", () => {
+        assert(dfseo.keywordsDataAPI.googleTrends);
+      });
+    });
+  });
+
   // DFSEO SERP
   it("should create SERP API", () => {
     assert(dfseo.serpAPI);
 
     describe("DFSEO SERP", () => {
+      it("should create yandex", () => {
+        assert(dfseo.serpAPI.yandex);
+        describe("DFSEO SERP Yandex", () => {
+          it("should be able to create organic", () => {
+            assert(dfseo.serpAPI.yandex.organic);
+            describe("DFSEO SERP Yandex Organic", () => {
+              it("should be able to create live", () => {
+                assert(dfseo.serpAPI.yandex.organic.live);
+                describe("DFSEO SERP Yandex Organic Live", () => {
+                  it("should be able to get regular", async () => {
+                    dfseoAPICheck(
+                      await dfseo.serpAPI.yandex.organic.live.regular(newTask)
+                    );
+                  });
+                  it("should be able to get html", async () => {
+                    dfseoAPICheck(
+                      await dfseo.serpAPI.yandex.organic.live.html(newTask)
+                    );
+                  });
+                });
+              });
+              it("should be able to create task get", () => {
+                assert(dfseo.serpAPI.yandex.organic.taskGet);
+                describe("DFSEO SERP Yandex Organic Task Get", () => {
+                  it("should be able to get regular", async () => {
+                    dfseoAPICheck(
+                      await dfseo.serpAPI.yandex.organic.taskGet.regular(taskId)
+                    );
+                  });
+                  it("should be able to get html", async () => {
+                    dfseoAPICheck(
+                      await dfseo.serpAPI.yandex.organic.taskGet.html(taskId)
+                    );
+                  });
+                });
+              });
+              it("should be able to create task", async () => {
+                dfseoAPICheck(
+                  await dfseo.serpAPI.yandex.organic.taskPost(newTask)
+                );
+              });
+              it("should be able to get ready tasks", async () => {
+                dfseoAPICheck(await dfseo.serpAPI.yandex.organic.tasksReady());
+              });
+            });
+          });
+          it("should be able to fetch locations", async () => {
+            dfseoAPICheck(await dfseo.serpAPI.yandex.locations());
+          });
+          it("should be able to fetch locations by country code", async () => {
+            dfseoAPICheck(await dfseo.serpAPI.yandex.locations("UK"));
+          });
+          it("should be able to fetch languages", async () => {
+            dfseoAPICheck(await dfseo.serpAPI.yandex.languages());
+          });
+        });
+      });
       it("should create yahoo", () => {
         assert(dfseo.serpAPI.yahoo);
         describe("DFSEO SERP Yahoo", () => {
@@ -111,6 +476,9 @@ describe("DFSEO", () => {
           });
           it("should be able to fetch locations", async () => {
             dfseoAPICheck(await dfseo.serpAPI.yahoo.locations());
+          });
+          it("should be able to fetch locations by country", async () => {
+            dfseoAPICheck(await dfseo.serpAPI.yahoo.locations("UK"));
           });
           it("should be able to fetch languages", async () => {
             dfseoAPICheck(await dfseo.serpAPI.yahoo.languages());
