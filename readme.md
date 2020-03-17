@@ -21,7 +21,7 @@ var password = process.env.DATAFORSEO_PASSWORD;
 
 var dfseoAPI = new DFSEO(username, password);
 
-dfseoAPI.serpAPI.google.organic
+dfseoAPI.serp.google.organic
   .taskPost([
     {
       keyword: "test",
@@ -52,7 +52,7 @@ const dfseoAPI = new DFSEO(username, password);
 
 async function main(){
     try{
-        const response = await dfseoAPI.serpAPI.google.organic.taskPost([
+        const response = await dfseoAPI.serp.google.organic.taskPost([
             keyword: 'test',
             priority: 1,
             location_code: 2840,
@@ -70,3 +70,13 @@ async function main(){
 ### Support
 
 Currently this library only supports version 3 of the DataForSEO API. _sorry!_
+
+# Documentation Map
+
+Figured it would just be easiest to line up what api calls go to where.
+
+| API | DFSEO Documentation Link |
+| --- | ------------------------ |
+
+
+| `dfseo.serp.

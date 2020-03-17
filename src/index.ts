@@ -1,10 +1,10 @@
-import { SerpAPI } from "./SERP_API";
+import { Serp } from "./SERP_API";
 import { Logger } from "./helpers/logger";
-import { KeywordsDataAPI } from "./keywords_data_API";
-import { TrafficAnalyticsAPI } from "./traffic_analytics_API";
+import { KeywordsData } from "./keywords_data_API";
+import { TrafficAnalytics } from "./traffic_analytics_API";
 import { Appendix } from "./appendix";
 import fetch from "node-fetch";
-import { DataForSEOLabsAPI } from "./DataForSEO_labs_API";
+import { DataForSEOLabs } from "./DataForSEO_labs_API";
 
 export class DFSEO {
   /**
@@ -18,12 +18,10 @@ export class DFSEO {
   /**
    * public api methods;
    */
-  public serpAPI: SerpAPI = new SerpAPI(this);
-  public keywordsDataAPI: KeywordsDataAPI = new KeywordsDataAPI(this);
-  public dataForSEOLabsAPI: DataForSEOLabsAPI = new DataForSEOLabsAPI(this);
-  public trafficAnalyticsAPI: TrafficAnalyticsAPI = new TrafficAnalyticsAPI(
-    this
-  );
+  public serp: Serp = new Serp(this);
+  public keywordsData: KeywordsData = new KeywordsData(this);
+  public dataForSEOLabs: DataForSEOLabs = new DataForSEOLabs(this);
+  public trafficAnalytics: TrafficAnalytics = new TrafficAnalytics(this);
   public appendix: Appendix = new Appendix(this);
 
   /**
