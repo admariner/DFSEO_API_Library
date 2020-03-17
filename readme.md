@@ -1,6 +1,6 @@
 # Data For SEO API (for javascript)
 
-![code coverage](/docs/badge.svg)
+![code coverage](/docs/badge.svg) [(HTML Coverage Report)](https://1point21interactive.github.io/DFSEO_API_Library/)
 
 ## Official Documentation
 
