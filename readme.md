@@ -1,34 +1,45 @@
 # Data For SEO API (for javascript)
+
 ![code coverage](/coverage/badge.svg)
+
+## Official Documentation
+
+https://docs.dataforseo.com/v3/
+
 ### Purpose
 
-The purpose of this library is to expose the wonderful Data For SEO rest API to javascript applications easily. Without having to write your own API calls and whatnot. It should work out of the box with only needing to provide your account's credentials for authorization purposes. 
+The purpose of this library is to expose the wonderful Data For SEO rest API to javascript applications easily. Without having to write your own API calls and whatnot. It should work out of the box with only needing to provide your account's credentials for authorization purposes.
 
 ### Ideal Usage (vanilla JS)
 
 ```javascript
-require('dotenv').config();
-var dfseoAPI = require('DFSEO');
+require("dotenv").config();
+var dfseoAPI = require("DFSEO");
 
 var username = process.env.DATAFORSEO_USERNAME;
 var password = process.env.DATAFORSEO_PASSWORD;
 
 var dfseoAPI = new DFSEO(username, password);
 
-dfseoAPI.serpAPI.google.organic.taskPost([{
-    keyword: 'test',
-    priority: 1,
-    location_code: 2840,
-    language_code: 'en'
-}]).then(res => {
+dfseoAPI.serpAPI.google.organic
+  .taskPost([
+    {
+      keyword: "test",
+      priority: 1,
+      location_code: 2840,
+      language_code: "en"
+    }
+  ])
+  .then(res => {
     console.log(res);
-}).catch(err => {
+  })
+  .catch(err => {
     console.log(err);
-})
-
+  });
 ```
 
-### Ideal Usage (TypeScript)
+### Ideal Usage (TypeScript/ES6)
+
 ```typescript
 import { DFSEO } from './';
 import * as dotenv from 'dotenv';
@@ -56,7 +67,6 @@ async function main(){
 
 ```
 
-## Other Goals
+### Support
 
-This library _should_ work in both Node environment and the browser environment since it's using Axios to make requests. However, it should be noted that you should use it with Node for security purposes but do what you want. 
-
+Currently this library only supports version 3 of the DataForSEO API. _sorry!_

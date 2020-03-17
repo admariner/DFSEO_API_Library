@@ -59,6 +59,127 @@ describe("DFSEO", () => {
     });
   });
 
+  // data for seo labs
+  it("should create Data For SEO Labs API", () => {
+    assert(dfseo.dataForSEOLabsAPI);
+    describe("DataForSEO Labs API", () => {
+      it("should be able to create competitor research", () => {
+        assert(dfseo.dataForSEOLabsAPI.competitorResearch);
+        describe("DFSEO DataForSEO Labs API Competitor Research", () => {
+          it("should be able to get ranked keywords", async () => {
+            dfseoAPICheck(
+              await dfseo.dataForSEOLabsAPI.competitorResearch.rankedKeywords(
+                newTask
+              )
+            );
+          });
+          it("should be able to get serp competitors", async () => {
+            dfseoAPICheck(
+              await dfseo.dataForSEOLabsAPI.competitorResearch.serpCompetitors(
+                newTask
+              )
+            );
+          });
+          it("should be able to get competitors domain", async () => {
+            dfseoAPICheck(
+              await dfseo.dataForSEOLabsAPI.competitorResearch.competitorsDomain(
+                newTask
+              )
+            );
+          });
+          it("should be able to get domain intersection", async () => {
+            dfseoAPICheck(
+              await dfseo.dataForSEOLabsAPI.competitorResearch.domainIntersection(
+                newTask
+              )
+            );
+          });
+          it("should be able to get subdomains", async () => {
+            dfseoAPICheck(
+              await dfseo.dataForSEOLabsAPI.competitorResearch.subdomains(
+                newTask
+              )
+            );
+          });
+          it("should be able to get relevant pages", async () => {
+            dfseoAPICheck(
+              await dfseo.dataForSEOLabsAPI.competitorResearch.relevantPages(
+                newTask
+              )
+            );
+          });
+          it("should be able to get domain rank overview", async () => {
+            dfseoAPICheck(
+              await dfseo.dataForSEOLabsAPI.competitorResearch.domainRankOverview(
+                newTask
+              )
+            );
+          });
+        });
+      });
+      it("should bea ble to create market specific analysis", () => {
+        assert(dfseo.dataForSEOLabsAPI.marketSpecificAnalysis);
+        describe("DFSEO DataForSEO Labs API Market Specific Analysis", () => {
+          it("should be able to get categories for domain", async () => {
+            dfseoAPICheck(
+              await dfseo.dataForSEOLabsAPI.marketSpecificAnalysis.categoriesForDomain(
+                newTask
+              )
+            );
+          });
+          it("should be able to get keywords for categories", async () => {
+            dfseoAPICheck(
+              await dfseo.dataForSEOLabsAPI.marketSpecificAnalysis.keywordsForCategories(
+                newTask
+              )
+            );
+          });
+          it("should be able to get ranked domains by category", async () => {
+            dfseoAPICheck(
+              await dfseo.dataForSEOLabsAPI.marketSpecificAnalysis.rankedDomainsByCategory(
+                newTask
+              )
+            );
+          });
+        });
+      });
+      it("should be able to create keyword research", () => {
+        assert(dfseo.dataForSEOLabsAPI.keywordResearch);
+        describe("DFSEO DataForSEO Labs API Keyword Research", () => {
+          it("should be able to get related keywords", async () => {
+            dfseoAPICheck(
+              await dfseo.dataForSEOLabsAPI.keywordResearch.relatedKeywords(
+                newTask
+              )
+            );
+          });
+          it("should be able to get keyword suggestsions", async () => {
+            dfseoAPICheck(
+              await dfseo.dataForSEOLabsAPI.keywordResearch.keywordSuggestions(
+                newTask
+              )
+            );
+          });
+          it("should be able to get keyword ideas", async () => {
+            dfseoAPICheck(
+              await dfseo.dataForSEOLabsAPI.keywordResearch.keywordIdeas(
+                newTask
+              )
+            );
+          });
+        });
+      });
+      it("should be able to get filters", async () => {
+        dfseoAPICheck(await dfseo.dataForSEOLabsAPI.filters());
+      });
+      it("should be able to get categories", async () => {
+        dfseoAPICheck(await dfseo.dataForSEOLabsAPI.categories());
+      });
+      it("should be able to get locations and languages", async () => {
+        dfseoAPICheck(await dfseo.dataForSEOLabsAPI.locationsAndLanguages());
+      });
+    });
+  });
   // appendix
   it("should create appendix API", () => {
     assert(dfseo.appendix);

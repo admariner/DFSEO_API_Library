@@ -30,7 +30,7 @@ export class DataForSEOLabsAPI {
   public locationsAndLanguages() {
     return this.DFSEO.fetch({
       method: "GET",
-      url: "dataforseo_labsl/locatiosn_and_languages"
+      url: "dataforseo_labs/locations_and_languages"
     });
   }
 }
