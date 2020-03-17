@@ -1,5 +1,5 @@
 {
-  "name": "DFSEO",
+  "name": "dataforseo",
   "version": "1.0.0",
   "description": "This is a simple API wrapper for DataForSEO. It was designed to make utilizing the API with Node.js easier. ",
   "repository": "git@github.com:1point21interactive/DFSEO_API_Library.git",
@@ -9,7 +9,7 @@
     "test": "nyc --reporter=json-summary --report-dir=docs ts-mocha && npm run make-badge",
     "build": "webpack --config webpack.config.js",
     "make-test-html": "nyc --reporter=html --report-dir=docs ts-mocha",
-    "make-badge": "make-coverage-badge --report-path=./docs/coverage-summary.json --output-path=./docs/badge.svg"
+    "make-badge": "make-coverage-badge --report-path=./docs/coverage-summary.json --output-path=./badge.svg"
   },
   "author": "Michael Sorensen",
   "license": "ISC",

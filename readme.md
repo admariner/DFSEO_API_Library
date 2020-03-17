@@ -1,6 +1,8 @@
 # Data For SEO API (for javascript)
 
-![code coverage](/docs/badge.svg) [(HTML Coverage Report)](https://1point21interactive.github.io/DFSEO_API_Library/)
+![code coverage](badge.svg) [(HTML Coverage Report)](https://1point21interactive.github.io/DFSEO_API_Library/)
+
+![bundle size](https://img.shields.io/bundlephobia/min/dataforseo)
 
 ## Official Documentation
 
@@ -10,16 +12,21 @@ https://docs.dataforseo.com/v3/
 
 The purpose of this library is to expose the wonderful Data For SEO rest API to javascript applications easily. Without having to write your own API calls and whatnot. It should work out of the box with only needing to provide your account's credentials for authorization purposes.
 
+### Getting Started
+
+`npm install dataforseo --save`
+
 ### Ideal Usage (vanilla JS)
 
 ```javascript
 require("dotenv").config();
-var dfseoAPI = require("DFSEO");
+var DFSEO = require("dataforseo");
 
 var username = process.env.DATAFORSEO_USERNAME;
 var password = process.env.DATAFORSEO_PASSWORD;
 
 var dfseo = new DFSEO(username, password);
+// var dfseo = new DFSEO(username, password, true) to use sandbox api
 
 dfseo.serp.google.organic
   .taskPost([
@@ -43,7 +50,7 @@ dfseo.serp.google.organic
 _Note_ Types are incomplete
 
 ```typescript
-import { DFSEO } from './';
+import  DFSEO  from 'dataforseo';
 import * as dotenv from 'dotenv';
 dotenv.config();
 
@@ -51,6 +58,7 @@ const username = process.env.DATAFORSEO_USERNAME;
 const password = process.env.DATAFORSEO_PASSWORD;
 
 const dfseo = new DFSEO(username, password);
+//const dfseo = new DFSEO(username, password, true) to use sandbox api
 
 async function main(){
     try{
