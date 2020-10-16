@@ -1,13 +1,13 @@
-import DFSEO from "../../../..";
+import { DFSEO } from "../../../..";
 
 export class Live {
-  constructor(private DFSEO: DFSEO) {}
+	constructor(private DFSEO: DFSEO) {}
 
-  advanced(data: any) {
-    return this.DFSEO.fetch({
-      method: "POST",
-      url: "serp/google/maps/live/advanced",
-      data
-    });
-  }
+	advanced(data: any) {
+		return this.DFSEO.fetch({
+			method: "POST",
+			url: "serp/google/maps/live/advanced",
+			data,
+		});
+	}
 }
