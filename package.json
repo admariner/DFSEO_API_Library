@@ -1,10 +1,11 @@
 {
 	"name": "dataforseo",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "This is a simple API wrapper for DataForSEO. It was designed to make utilizing the API with Node.js easier. ",
 	"repository": "git@github.com:1point21interactive/DFSEO_API_Library.git",
 	"main": "./lib/index.js",
 	"types": "./lib/index.d.ts",
+	"type": "module",
 	"scripts": {
 		"test": "nyc --reporter=json-summary --report-dir=docs ts-mocha && npm run make-badge",
 		"build": "webpack --config webpack.config.js",
