@@ -5,6 +5,10 @@
 	"repository": "git@github.com:1point21interactive/DFSEO_API_Library.git",
 	"main": "./lib/index.js",
 	"types": "./lib/index.d.ts",
+	"keywords": [
+		"dfseo",
+		"api"
+	],
 	"scripts": {
 		"test": "nyc --reporter=json-summary --report-dir=docs ts-mocha && npm run make-badge",
 		"build": "tsc",
