@@ -1,8 +1,9 @@
-export interface IITem_People_Also_Ask {
+import { ISERP_Item } from "../../task_get";
+export interface IITem_People_Also_Ask extends ISERP_Item {
     type: "people_also_ask";
     rank_group: number;
     rank_absolute: number;
-    position: "left" | 'right';
+    position: "left" | "right";
     xpath: string;
     items: {
         type: "people_also_ask_element";

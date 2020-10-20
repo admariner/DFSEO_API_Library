@@ -1,4 +1,5 @@
-export interface IItem_Answer_Box {
+import { ISERP_Item } from "../../task_get";
+export interface IItem_Answer_Box extends ISERP_Item {
     type: "answer_box";
     rank_group: number;
     rank_absolute: number;

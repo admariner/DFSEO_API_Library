@@ -1,4 +1,5 @@
-export interface IItem_Paid {
+import { ISERP_Item } from "../../task_get";
+export interface IItem_Paid extends ISERP_Item {
     type: "paid";
     rank_group: number;
     rank_absolute: number;

@@ -1,8 +1,9 @@
-export interface IItem_Twitter {
+import { ISERP_Item } from "../../task_get";
+export interface IItem_Twitter extends ISERP_Item {
     type: "twitter";
     rank_group: number;
     rank_absolute: number;
-    position: "left" | 'right';
+    position: "left" | "right";
     xpath: string;
     title: string;
     url: string;

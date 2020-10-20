@@ -1,4 +1,5 @@
-export interface IItem_Knowledge_graph {
+import { ISERP_Item } from "../../task_get";
+export interface IItem_Knowledge_graph extends ISERP_Item {
     type: "knowledge_graph";
     rank_group: number;
     rank_absolute: number;

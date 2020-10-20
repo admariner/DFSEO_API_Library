@@ -1,4 +1,5 @@
-export interface IItem_Google_Flights {
+import { ISERP_Item } from "../../task_get";
+export interface IItem_Google_Flights extends ISERP_Item {
     type: "google_flights";
     rank_group: number;
     rank_absolute: number;

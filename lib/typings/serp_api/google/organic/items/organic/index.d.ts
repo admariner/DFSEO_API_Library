@@ -1,5 +1,6 @@
 import { IDFSEOSERPGoogleRating } from "../../../../..";
-export interface IItem_Organic {
+import { ISERP_Item } from "../../task_get";
+export interface IItem_Organic extends ISERP_Item {
     type: "organic";
     rank_group: number;
     rank_absolute: number;

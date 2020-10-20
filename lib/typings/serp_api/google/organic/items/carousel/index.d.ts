@@ -1,8 +1,9 @@
-export interface IItem_Carousel {
+import { ISERP_Item } from "../../task_get";
+export interface IItem_Carousel extends ISERP_Item {
     type: "carousel";
     rank_group: number;
     rank_absolute: number;
-    position: "left" | 'right';
+    position: "left" | "right";
     xpath: string;
     title: string;
     items: {

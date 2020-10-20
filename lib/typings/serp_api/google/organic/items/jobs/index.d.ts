@@ -1,8 +1,9 @@
-export interface IITem_Jobs {
+import { ISERP_Item } from "../../task_get";
+export interface IITem_Jobs extends ISERP_Item {
     type: "jobs";
     rank_group: number;
     rank_absolute: number;
-    position: "left" | 'right';
+    position: "left" | "right";
     xpath: string;
     title: string;
     url: string;
