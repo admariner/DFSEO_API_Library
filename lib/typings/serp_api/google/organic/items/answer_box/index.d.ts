@@ -4,7 +4,7 @@ export interface IItem_Answer_Box {
     rank_absolute: number;
     position: "left" | "right";
     xpath: string;
-    text: string | null;
+    text: string[] | null;
     links: {
         type: "link_element";
         title: string;
