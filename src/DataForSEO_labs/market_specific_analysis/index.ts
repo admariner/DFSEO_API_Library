@@ -14,7 +14,7 @@ export class MarketSpecificAnalysis {
 	keywordsForCategories(data: any) {
 		return this.DFSEO.fetch({
 			method: "POST",
-			url: "dataforseo_labs/keyword_for_categories/live",
+			url: "dataforseo_labs/keywords_for_categories/live",
 			data,
 		});
 	}

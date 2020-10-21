@@ -8,6 +8,11 @@ export declare class DataForSEOLabs {
     marketSpecificAnalysis: MarketSpecificAnalysis;
     competitorResearch: CompetitorResearch;
     constructor(DFSEO: DFSEO);
+    /**
+     * this endpoint does not work currently. But here's the documentation:
+     *
+     * https://docs.dataforseo.com/v3/dataforseo_labs/filters/?php
+     */
     filters(): Promise<any>;
     categories(): Promise<any>;
     locationsAndLanguages(): Promise<any>;

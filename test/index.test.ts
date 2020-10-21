@@ -1,4 +1,4 @@
-import { DFSEO } from "../lib";
+import { DFSEO, IDFSEO_API_Response } from "../lib";
 import * as dotenv from "dotenv";
 import { expect } from "chai";
 import { assert } from "console";
@@ -14,14 +14,20 @@ const newTask = [
 	},
 ];
 
-const taskId = "03111954-3683-0066-2000-8e12d6d815d8";
+const onPageTask = {
+	target: "google.com",
+	max_crawl_pages: 1,
+};
 
-async function dfseoAPICheck(response) {
+const taskId = "03111954-3683-0066-2000-8e12d6d815d8";
+const onPageTaskId = "10220041-3683-0216-2000-69901ad4d883";
+
+async function dfseoAPICheck(response: IDFSEO_API_Response) {
 	try {
-		expect(response.status_code).to.equal(20000);
+		if (!response) throw "no response object";
+		expect(response?.status_code).to.equal(20000);
 	} catch (e) {
-		console.log(e);
-		console.log(response);
+		assert(false);
 	}
 }
 
@@ -117,7 +123,7 @@ describe("DFSEO", () => {
 					});
 				});
 			});
-			it("should be able to get filters", async () => {
+			it.skip("should be able to get filters", async () => {
 				dfseoAPICheck(await dfseo.dataForSEOLabs.filters());
 			});
 			it("should be able to get categories", async () => {
@@ -689,6 +695,25 @@ describe("DFSEO", () => {
 					});
 				});
 			});
+		});
+	});
+
+	// DFSEO On Page
+	it("should create on page", () => {
+		assert(dfseo.onPage);
+
+		describe("DFSEO On Page", () => {
+			it("should be able to make a task", async () => dfseoAPICheck(await dfseo.onPage.taskPost([onPageTask])));
+			it("should be able to get page summary", async () => dfseoAPICheck(await dfseo.onPage.summary(onPageTaskId)));
+			it("should be able to get Pages", async () => dfseoAPICheck(await dfseo.onPage.pages([{ id: onPageTaskId }])));
+			it("should be able to get pages by resource", async () => dfseoAPICheck(await dfseo.onPage.pagesByResource([{ id: onPageTaskId }])));
+			it("should be able to get resources", async () => dfseoAPICheck(await dfseo.onPage.resources([{ id: onPageTaskId }])));
+			it("should be able to get duplicate tags", async () => dfseoAPICheck(await dfseo.onPage.duplicate_tags([{ id: onPageTaskId }])));
+			it("should be able to get duplicate content", async () => dfseoAPICheck(await dfseo.onPage.duplicate_content([{ id: onPageTaskId }])));
+			it("should be able to get links", async () => dfseoAPICheck(await dfseo.onPage.links([{ id: onPageTaskId }])));
+			it("should be able to get non-indexable", async () => dfseoAPICheck(await dfseo.onPage.non_indexable([{ id: onPageTaskId }])));
+			it("should be able to get waterfall", async () => dfseoAPICheck(await dfseo.onPage.waterfall([{ id: onPageTaskId }])));
+			it("should be able to get raw HTML", async () => dfseoAPICheck(await dfseo.onPage.raw_HTML([{ id: onPageTaskId }])));
 		});
 	});
 });

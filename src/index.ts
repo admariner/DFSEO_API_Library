@@ -49,27 +49,26 @@ export class DFSEO {
 		const baseURL = this.useSandbox ? "https://sandbox.dataforseo.com/v3/" : "https://api.dataforseo.com/v3/";
 		const headers = { authorization, "Content-Type": "application/json" };
 		try {
-			const response = await fetch(baseURL + config.url, {
+			const path = baseURL + config.url;
+			const response = await fetch(path, {
 				method: config.method,
 				body: JSON.stringify(config.data),
 				headers,
 			});
 
 			if (response.status !== 200) {
-				this.logger.error(response.status, response.statusText);
+				this.logger.error(response.status, response.statusText, path);
 				throw response.statusText;
 			}
 
 			const data = await response.json();
 			if (data.status_code !== 20000 && data.status_code !== 20100) {
-				this.logger.error(data.status_code, data.status_message);
-				throw data.status_message;
+				this.logger.error(data.status_code, data.status_message, path);
 			}
 
 			return data;
 		} catch (e) {
 			console.log(e);
-			throw e;
 		}
 		// error handling
 	}

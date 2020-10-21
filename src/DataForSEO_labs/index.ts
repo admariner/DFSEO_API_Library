@@ -9,6 +9,11 @@ export class DataForSEOLabs {
 	public competitorResearch: CompetitorResearch = new CompetitorResearch(this.DFSEO);
 	constructor(private DFSEO: DFSEO) {}
 
+	/**
+	 * this endpoint does not work currently. But here's the documentation:
+	 *
+	 * https://docs.dataforseo.com/v3/dataforseo_labs/filters/?php
+	 */
 	public filters() {
 		return this.DFSEO.fetch({
 			method: "GET",

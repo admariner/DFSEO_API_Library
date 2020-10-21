@@ -3,6 +3,7 @@ import { KeywordsData } from "./keywords_data";
 import { TrafficAnalytics } from "./traffic_analytics";
 import { Appendix } from "./appendix";
 import { DataForSEOLabs } from "./DataForSEO_labs";
+import { OnPage } from "./OnPage";
 export * from "./typings";
 export declare class DFSEO {
     private username;
@@ -20,6 +21,7 @@ export declare class DFSEO {
      * public api methods;
      */
     serp: Serp;
+    onPage: OnPage;
     keywordsData: KeywordsData;
     dataForSEOLabs: DataForSEOLabs;
     trafficAnalytics: TrafficAnalytics;
