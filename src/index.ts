@@ -5,6 +5,7 @@ import { TrafficAnalytics } from "./traffic_analytics";
 import { Appendix } from "./appendix";
 import fetch from "node-fetch";
 import { DataForSEOLabs } from "./DataForSEO_labs";
+import { OnPage } from "./OnPage";
 export * from "./typings";
 export class DFSEO {
 	/**
@@ -19,6 +20,7 @@ export class DFSEO {
 	 * public api methods;
 	 */
 	public serp: Serp = new Serp(this);
+	public onPage: OnPage = new OnPage(this);
 	public keywordsData: KeywordsData = new KeywordsData(this);
 	public dataForSEOLabs: DataForSEOLabs = new DataForSEOLabs(this);
 	public trafficAnalytics: TrafficAnalytics = new TrafficAnalytics(this);
