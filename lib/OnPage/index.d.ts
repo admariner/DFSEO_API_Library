@@ -1,5 +1,6 @@
 import { DFSEO } from "..";
-import { IOnPage_Summary, IOnPage_Task_Post_Request, IOnPage_Task_Post_Response } from "../typings";
+import { IOnPage_Task_Post_Request, IOnPage_Task_Post_Response } from "../typings/onPage_api/task_post";
+import { IOnPage_Summary } from "../typings/onPage_api/summary";
 import { IOnPage_Pages_Request } from "../typings/onPage_api/pages";
 export declare class OnPage {
     private DFSEO;

@@ -1,4 +1,7 @@
-import { IAvailableFiltersOnPage, IDFSEO_API_Request } from "../..";
+import { IAvailableFiltersOnPage, IDFSEO_API_Request, IDFSEO_API_Response } from "../..";
+import { IBroken_Page } from "./broken_page";
+import { IHTML_Page } from "./html_page";
+import { IRedirect_Page } from "./redirect_page";
 
 export interface IOnPage_Pages_Request extends IDFSEO_API_Request {
 	id: string;
@@ -13,4 +16,19 @@ export interface IOnPage_Pages_Request extends IDFSEO_API_Request {
 	 */
 	order_by?: string[];
 	tag?: string;
+}
+
+export interface IOnPage_Pages_Response extends IDFSEO_API_Response {
+	data: IOnPage_Pages_Request[];
+	result: {
+		crawl_progress: string;
+		items_count: number;
+		items: Item_Page[];
+	}[];
+}
+
+type Item_Page = IHTML_Page | IBroken_Page | IRedirect_Page;
+
+export interface IITem_Page {
+	resource_type: "html" | "broken" | "redirect";
 }
