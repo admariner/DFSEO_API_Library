@@ -22,7 +22,7 @@ export interface IOnPage_Summary_Task extends IDFSEO_API_Task {
 				certificate_version: string;
 				certificate_hash: string;
 				certificate_expiration_date: string;
-			}[];
+			};
 			checks: {
 				sitemap: boolean;
 				robots_txt: boolean;
@@ -32,13 +32,13 @@ export interface IOnPage_Summary_Task extends IDFSEO_API_Task {
 				test_hidden_server_signature: boolean;
 				test_page_not_found: boolean;
 				test_directory_browsing: boolean;
-			}[];
+			};
 			total_pages: number;
 			page_not_found_status_code: number;
 			canonicalization_status_code: number;
 			directory_browsing_status_code: number;
 			main_domain: number;
-		}[];
+		};
 		page_metrics: {
 			links_external: number;
 			links_internal: number;
@@ -88,7 +88,7 @@ export interface IOnPage_Summary_Task extends IDFSEO_API_Task {
 				no_title: number;
 				flash: number;
 				lorem_ipsum: number;
-			}[];
-		}[];
+			};
+		};
 	}[];
 }
