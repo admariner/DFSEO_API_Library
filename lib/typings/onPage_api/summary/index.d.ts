@@ -3,7 +3,7 @@ import { IOnPage_Task_Post_Request } from "../task_post";
 export interface IOnPage_Summary extends IDFSEO_API_Response {
     data: IOnPage_Task_Post_Request[];
     result: {
-        crawl_progress: string;
+        crawl_progress: "in_progress" | "finished";
         domain_info: {
             name: string;
             cms: string;

@@ -22,7 +22,7 @@ export interface IOnPage_Pages_Response extends IDFSEO_API_Response {
 export interface IOnPage_Pages_Task extends IDFSEO_API_Task {
     data: IOnPage_Pages_Request[];
     result: {
-        crawl_progress: string;
+        crawl_progress: "in_progress" | "finished";
         items_count: number;
         items: Item_Page[];
     }[];
