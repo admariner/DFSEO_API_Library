@@ -37,11 +37,11 @@ export interface IHTML_Page extends IITem_Page {
             description_to_content_consistency: number;
             title_to_content_consistency: number;
             meta_keywords_to_content_consistency: number;
-        }[];
+        };
         deprecated_tags: string[];
         duplicate_meta_tags: string[];
         spell: string;
-    }[];
+    };
     page_timing: {
         time_to_interactive: number;
         dom_complete: number;
@@ -53,7 +53,7 @@ export interface IHTML_Page extends IITem_Page {
         duration_time: number;
         fetch_start: number;
         fetch_end: number;
-    }[];
+    };
     total_dom_size: number;
     custom_js_response: string | string[] | number;
     broken_resources: boolean;
@@ -68,7 +68,7 @@ export interface IHTML_Page extends IITem_Page {
     cache_control: {
         cachable: boolean;
         ttl: number;
-    }[];
+    };
     checks: {
         no_content_encoding: boolean;
         high_loading_time: boolean;
@@ -111,7 +111,7 @@ export interface IHTML_Page extends IITem_Page {
         seo_friendly_url_dynamic_check: boolean;
         seo_friendly_url_keywords_check: boolean;
         seo_friendly_url_relative_length_check: boolean;
-    }[];
+    };
     content_encoding: string;
     media_type: string;
     server: string;
