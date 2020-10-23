@@ -1,6 +1,6 @@
 import { DFSEO } from "..";
 import { IOnPage_Task_Post_Request, IOnPage_Task_Post_Response } from "../typings/onPage_api/task_post";
-import { IOnPage_Summary } from "../typings/onPage_api/summary";
+import { IOnPage_Summary_Response } from "../typings/onPage_api/summary";
 import { IOnPage_Pages_Request, IOnPage_Pages_Response } from "../typings/onPage_api/pages";
 import { IOnPage_Pages_By_Resource_Request } from "../typings/onPage_api/pages_by_resource";
 
@@ -15,7 +15,7 @@ export class OnPage {
 		});
 	}
 
-	public summary(id: string): Promise<IOnPage_Summary> {
+	public summary(id: string): Promise<IOnPage_Summary_Response> {
 		return this.DFSEO.fetch({
 			method: "GET",
 			url: `on_page/summary/${id}`,

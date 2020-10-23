@@ -1,6 +1,9 @@
-import { IDFSEO_API_Response } from "../..";
+import { IDFSEO_API_Response, IDFSEO_API_Task } from "../..";
 import { IOnPage_Task_Post_Request } from "../task_post";
-export interface IOnPage_Summary extends IDFSEO_API_Response {
+export interface IOnPage_Summary_Response extends IDFSEO_API_Response {
+    tasks: IOnPage_Summary_Task[];
+}
+export interface IOnPage_Summary_Task extends IDFSEO_API_Task {
     data: IOnPage_Task_Post_Request[];
     result: {
         crawl_progress: "in_progress" | "finished";
