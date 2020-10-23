@@ -1,4 +1,4 @@
-import { IAvailableFiltersOnPage, IDFSEO_API_Request, IDFSEO_API_Response } from "../..";
+import { IAvailableFiltersOnPage, IDFSEO_API_Request, IDFSEO_API_Response, IDFSEO_API_Task } from "../..";
 import { IBroken_Page } from "./broken_page";
 import { IHTML_Page } from "./html_page";
 import { IRedirect_Page } from "./redirect_page";
@@ -17,8 +17,10 @@ export interface IOnPage_Pages_Request extends IDFSEO_API_Request {
 	order_by?: string[];
 	tag?: string;
 }
-
 export interface IOnPage_Pages_Response extends IDFSEO_API_Response {
+	tasks: IOnPage_Pages_Task[];
+}
+export interface IOnPage_Pages_Task extends IDFSEO_API_Task {
 	data: IOnPage_Pages_Request[];
 	result: {
 		crawl_progress: string;
