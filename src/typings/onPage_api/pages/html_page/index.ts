@@ -6,7 +6,7 @@ export interface IHTML_Page extends IITem_Page {
 	location: string;
 	url: string;
 	meta: {
-		title: number;
+		title: string;
 		charset: number;
 		follow: boolean;
 		generator: string;
